@@ -1,6 +1,7 @@
 -- =========================================================
 -- MINI PROJECT FULL-STACK WEB DEVELOPMENT
 -- CASE STUDY: LEARNING MANAGEMENT SYSTEM (LMS)
+-- LINK DRAW.IO :  https://app.diagrams.net/#G1pfRmbVMUH2AhUmvN4qsCuAmLwaOqJ5kV#%7B%22pageId%22%3A%22aiFxxEzGud-hVxVeEYMo%22%7D
 -- =========================================================
 
 -- Hapus database jika sebelumnya sudah ada
@@ -216,3 +217,13 @@ WHERE
 	u.role = "instructor"
 GROUP BY
 	u.user_id;
+
+-- Tambahan: Indexing
+CREATE INDEX idx_course_price ON course(price);
+SHOW INDEX FROM course;
+
+-- Tambahan: Explain
+EXPLAIN SELECT * FROM course WHERE price > 500000;
+
+-- Tambahan: FILTER
+EXPLAIN SELECT * FROM course WHERE course_name LIKE '%JAVA%';
